@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <connection></connection>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let card of posts | async">
+    <ion-card-content>
+      <ion-card-title>
+        {{card.title}}
+      </ion-card-title>
+      <div *ngIf="card.link">
+        <a href="{{card.link}}" target="_blank">Visit Site</a>
+      </div>
+      <p>
+        {{card.body}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
